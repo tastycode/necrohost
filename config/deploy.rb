@@ -1,7 +1,9 @@
 set :application, "Necrohost"
-set :repository,  ""
+set :repository,  "git://github.com/vajrapani666/necrohost.git"
 
 set :scm, :git
+set :user, "vajrapani666"
+set :deploy_to, "/data/necrohost"
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
 role :web, "www.necrohost.com"                          # Your HTTP server, Apache/etc
