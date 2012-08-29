@@ -29,5 +29,6 @@ role :app, "www.necrohost.com"                          # This may be the same a
 #   end
 # end
 require "rvm/capistrano"
+require "bundler/capistrano"
 require 'capistrano-unicorn'
 
