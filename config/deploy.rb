@@ -1,4 +1,5 @@
 set :rvm_ruby_string, "ruby-1.9.2@necrohost"
+set :rvm_type, :system
 
 set :application, "Necrohost"
 set :repository,  "git://github.com/vajrapani666/necrohost.git"
