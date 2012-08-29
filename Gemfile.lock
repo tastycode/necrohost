@@ -9,8 +9,13 @@ GEM
       net-ssh-gateway (>= 1.1.0)
     capistrano-unicorn (0.1.6)
       capistrano
+    coderay (1.0.7)
+    haml (3.1.7)
     highline (1.6.14)
+    hpricot (0.8.6)
     kgio (2.7.4)
+    method_source (0.8)
+    mustache (0.99.4)
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-sftp (2.0.5)
@@ -18,16 +23,25 @@ GEM
     net-ssh (2.5.2)
     net-ssh-gateway (1.1.0)
       net-ssh (>= 1.99.1)
+    pry (0.9.10)
+      coderay (~> 1.0.5)
+      method_source (~> 0.8)
+      slop (~> 3.3.1)
+    pry-nav (0.2.2)
+      pry (~> 0.9.10)
     rack (1.4.1)
     rack-protection (1.2.0)
       rack
     raindrops (0.10.0)
     rvm-capistrano (1.2.6)
       capistrano (>= 2.0.0)
+    shotgun (0.9)
+      rack (>= 1.0)
     sinatra (1.3.3)
       rack (~> 1.3, >= 1.3.6)
       rack-protection (~> 1.2)
       tilt (~> 1.3, >= 1.3.3)
+    slop (3.3.2)
     tilt (1.3.3)
     unicorn (4.3.1)
       kgio (~> 2.6)
@@ -40,6 +54,12 @@ PLATFORMS
 DEPENDENCIES
   capistrano
   capistrano-unicorn
+  haml
+  hpricot
+  mustache
+  pry
+  pry-nav
   rvm-capistrano
+  shotgun
   sinatra
   unicorn

@@ -1,8 +1,7 @@
 require 'sinatra'
 
 set :env, :production
-disable :run
 
 require './server.rb'
+run Necrohost::Server
 
-run Sinatra::Application
