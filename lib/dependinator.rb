@@ -1,4 +1,3 @@
-require 'pry'
 module Dependinator
   Error = Class.new(Exception) do
     attr_accessor :original_exception
