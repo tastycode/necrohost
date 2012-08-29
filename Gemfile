@@ -13,4 +13,9 @@ gem 'shotgun'
 group :development do
   gem 'pry'
   gem 'pry-nav'
+  gem 'minitest'
+  gem 'turn'
+  gem 'mocha'
+  gem 'spinach'
+  gem 'capybara'
 end
