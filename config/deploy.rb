@@ -1,4 +1,4 @@
-
+set :rvm_ruby_string, "ruby-1.9.2@necrohost"
 
 set :application, "Necrohost"
 set :repository,  "git://github.com/vajrapani666/necrohost.git"
@@ -27,4 +27,6 @@ role :app, "www.necrohost.com"                          # This may be the same a
 #     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
 #   end
 # end
+require "rvm/capistrano"
 require 'capistrano-unicorn'
+
