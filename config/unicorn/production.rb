@@ -1,5 +1,5 @@
 worker_processes 8
-working_directory File.dirname(__FILE__)
+working_directory "/data/necrohost/current"
 listen 'unix:/tmp/necrohost.sock', :backlog => 512
 timeout 120
 pid "/var/run/unicorn/necrohost.pid"
