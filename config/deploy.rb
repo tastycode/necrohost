@@ -14,15 +14,6 @@ role :app, "www.necrohost.com"                          # This may be the same a
 #role :db,  " primary db-server here", :primary => true # This is where Rails migrations will run
 #role :db,  "your slave db-server here"
 
-before "deploy", "deploy:double_kill_unicorn"
-
-namespace :deploy do
-  task :double_kill_unicorn do
-    %x{ps ax | grep unicorn | grep master | xargs kill}
-  end
-end
-
-
 # if you want to clean up old releases on each deploy uncomment this:
 # after "deploy:restart", "deploy:cleanup"
 
