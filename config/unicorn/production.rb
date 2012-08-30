@@ -1,7 +1,8 @@
 require 'fileutils'
 
-FileUtils.mkdir_p "/data/necrohost/current/tmp/pids"
-pid "/data/necrohost/current/tmp/pids/unicorn.pid"
+pid_path = "/data/necrohost/current/tmp/pids"
+FileUtils.mkdir_p pid_path unless File.exists? pid_path
+pid File.join(pid_path, "unicorn.pid")
 
 worker_processes 8
 working_directory "/data/necrohost/current"
