@@ -1,8 +1,12 @@
+require 'fileutils'
+
+FileUtils.mkdir_p "/data/necrohost/current/tmp/pids"
+pid "/data/necrohost/current/tmp/pids/unicorn.pid"
+
 worker_processes 8
 working_directory "/data/necrohost/current"
 listen 'unix:/tmp/necrohost.sock', :backlog => 512
 timeout 120
-pid "/data/necrohost/current/tmp/pids/unicorn.pid"
 
 preload_app true
 
