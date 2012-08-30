@@ -9,6 +9,7 @@ gem 'mustache'
 gem 'haml'
 gem 'hpricot'
 gem 'shotgun'
+gem 'dependence', :git => "git://github.com/vajrapani666/dependence.git"
 
 group :development do
   gem 'pry'
@@ -18,4 +19,6 @@ group :development do
   gem 'mocha'
   gem 'spinach'
   gem 'capybara'
+  gem 'guard-minitest'
 end
+

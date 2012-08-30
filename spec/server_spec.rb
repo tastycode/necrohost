@@ -1,4 +1,4 @@
-require 'test_helper'
+require 'spec_helper'
 describe Necrohost::Server do
   describe "render shortcut" do
     let(:template_name) { "the_template" }
