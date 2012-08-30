@@ -1,11 +1,10 @@
 require 'sinatra/base'
 require 'mustache/sinatra'
-require './lib/dependinator'
-
+require 'dependence'
 module Necrohost
   MAX_SLEEP = 60
   class Server < Sinatra::Base
-    include ::Dependinator
+    include ::Dependence
     register Mustache::Sinatra #must come before dependencies
     requires :sleep, :as => Kernel 
     requires :haml, :as => :instance
