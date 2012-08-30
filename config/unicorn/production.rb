@@ -1,7 +1,10 @@
 require 'fileutils'
 
+
 pid_path = "/data/necrohost/current/tmp/pids"
-FileUtils.mkdir_p pid_path unless File.exists? pid_path
+unless File.exists?(pid_path) || File.symlink?(pid_path)
+  FileUtils.mkdir_p pid_path
+end
 pid File.join(pid_path, "unicorn.pid")
 
 worker_processes 8
