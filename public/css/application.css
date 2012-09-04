@@ -1,0 +1,21 @@
+html, body {
+    height: 100%;
+}
+#push {
+  height: 54px;
+}
+footer[role="contentinfo"] {
+  height: 18px; /* accounts for padding */
+  color: #666;
+  background: #f5f5f5;
+  padding: 18px 0;
+}
+footer[role="contentinfo"] p {
+  margin: 0;
+}
+body > .container {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -54px;
+}

@@ -6,6 +6,7 @@
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
     / Le styles
     %link{:href => "/css/bootstrap.css", :rel => "stylesheet"}/
+    %link{:href => "/css/application.css", :rel => "stylesheet"}/
     :css
       body {
         padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
@@ -30,5 +31,12 @@
                 %a{:href => "http://twitter.com/vajrapani666"} Contact
     .container
       {{{yield}}}
+      #push
+        / //
+    %footer{:role => "contentinfo"}
+      .container
+        %a{:href => "http://github.com/vajrapani666/necrohost"} Source
+        by  
+        %a{:href => "http://twitter.com/vajrapani666"} vajrapani666
     %script{:src => "/js/jquery.js"}
     %script{:src => "/js/bootstrap.min.js"}
