@@ -6,6 +6,7 @@ set :repository,  "git://github.com/vajrapani666/necrohost.git"
 
 set :scm, :git
 set :user, "vajrapani666"
+set :use_sudo, false
 set :deploy_to, "/data/necrohost"
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
