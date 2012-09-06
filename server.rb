@@ -30,7 +30,35 @@ module Necrohost
     get '/sleep/:interval' do |interval|
        @sleep_time = [interval.to_i, MAX_SLEEP].min
        sleep @sleep_time
-       render_hamustache :sleep
+       render_hamustache:sleep
+    end
+
+    get '/redirected' do
+      render_hamustache :redirected
+    end
+
+    get '/status/200' do
+     render_hamustache :ok
+    end
+
+    get '/status/301' do
+      redirect '/redirected', 301
+    end
+
+    get '/status/302' do
+      redirect '/redirected', 302
+    end
+
+    get '/status/500' do
+      5/0
+    end
+
+    not_found do
+      render_hamustache :not_found
+    end
+
+    error do
+      render_hamustache :error
     end
 
     def render_hamustache template_name, options = {}

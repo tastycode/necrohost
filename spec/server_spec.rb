@@ -1,6 +1,33 @@
 require 'spec_helper'
+require 'rack/test'
 describe Necrohost::Server do
-  describe "render shortcut" do
+  describe "application" do
+    include Rack::Test::Methods
+    let(:app) { Necrohost::Server }
+
+    it "returns successful for status/200" do
+      get '/status/200'
+      last_response.status.must_equal 200
+    end
+
+    it "returns 500 for status/500" do
+      get '/status/500'
+      last_response.status.must_equal 500
+    end
+
+    it "returns 301 for status/301" do
+      get '/status/301'
+      last_response.status.must_equal 301
+      last_response.headers['location'].must_equal "http://example.org/redirected"
+    end
+
+    it "returns 302 for status/302" do
+      get '/status/302'
+      last_response.status.must_equal 302
+      last_response.headers['location'].must_equal "http://example.org/redirected"
+    end
+  end
+  describe "render shortcuts" do
     let(:template_name) { "the_template" }
 
     subject do

@@ -18,3 +18,14 @@
 %b 
   link: 
   %a{:href => "http://www.necrohost.com/sleep/5"} http://www.necrohost.com/sleep/5
+
+%h3 Status Codes
+%p This path will return the appropriate status code if it is supported
+%b
+  link:
+  %a{:href => "http://www.necrohost.com/status/404"} http://www.necrohost.com/status/404
+  %br/
+  supported_codes:
+  %ul
+  = list_of %w(200 301 302 404 500) do |code|
+    %a{:href => "http://www.necrohost.com/status/#{code}"}= code
