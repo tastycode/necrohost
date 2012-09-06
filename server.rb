@@ -21,6 +21,8 @@ module Necrohost
       :templates => 'templates/'
     }
 
+    set :environment, :production if ENV['PRODUCTION']
+
     get '/' do
       render_hamustache:index
     end

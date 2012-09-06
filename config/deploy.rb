@@ -3,8 +3,12 @@ set :rvm_type, :system
 
 set :application, "Necrohost"
 set :repository,  "git://github.com/vajrapani666/necrohost.git"
-
 set :scm, :git
+
+
+set :default_environment, {
+  'PRODUCTION' => 1
+}
 set :user, "vajrapani666"
 set :use_sudo, false
 set :deploy_to, "/data/necrohost"
