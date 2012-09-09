@@ -8,7 +8,7 @@ gem 'rvm-capistrano'
 gem 'mustache'
 gem 'haml'
 gem 'hpricot'
-gem 'shotgun'
+gem 'sinatra-contrib'
 gem 'dependence', :git => "git://github.com/vajrapani666/dependence.git"
 
 group :development do

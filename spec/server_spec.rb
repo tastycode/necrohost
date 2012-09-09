@@ -1,5 +1,6 @@
-require 'spec_helper'
+require_relative './spec_helper'
 require 'rack/test'
+require 'json'
 describe Necrohost::Server do
   describe "application" do
     include Rack::Test::Methods
@@ -26,6 +27,12 @@ describe Necrohost::Server do
       last_response.status.must_equal 302
       last_response.headers['location'].must_equal "http://example.org/redirected"
     end
+
+    it "detects json format and returns json" do
+      get '/status/200.json'
+      last_response.status.must_equal 200
+      JSON.parse(last_response.body).must_equal({"status" =>"200"})
+    end
   end
   describe "render shortcuts" do
     let(:template_name) { "the_template" }
@@ -39,12 +46,12 @@ describe Necrohost::Server do
     it "just renders mustache/haml by default" do
       subject.expects(:mustache).returns(:mustache_result)
       subject.expects(:haml).with(:mustache_result)
-      subject.render_hamustache template_name
+      subject.hamustache template_name
     end
 
     it "autocreates a view inherited from layout" do
       expected_class = "Necrohost::Server::Views::TheTemplate"
-      subject.render_hamustache template_name
+      subject.hamustache template_name
       Necrohost::Server::Views.const_defined?("TheTemplate").must_equal true
       Necrohost::Server::Views.const_get("TheTemplate").must_be :<, Necrohost::Server::Views::Layout
     end
