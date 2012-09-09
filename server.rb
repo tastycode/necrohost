@@ -3,8 +3,7 @@ require 'sinatra/json'
 require 'sinatra/respond_with'
 require 'mustache/sinatra'
 require 'dependence'
-require 'english'
-require 'pry'
+require 'English'
 module Necrohost
   MAX_SLEEP = 60
   class Server < Sinatra::Base
