@@ -28,11 +28,17 @@ describe Necrohost::Server do
       last_response.headers['location'].must_equal "http://example.org/redirected"
     end
 
+    it "returns 404 for status/404" do
+      get '/status/404'
+      last_response.status.must_equal 404
+    end
+
     it "detects json format and returns json" do
       get '/status/200.json'
       last_response.status.must_equal 200
       JSON.parse(last_response.body).must_equal({"status" =>"200"})
     end
+
   end
   describe "render shortcuts" do
     let(:template_name) { "the_template" }

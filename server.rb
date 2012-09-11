@@ -51,6 +51,10 @@ module Necrohost
     get '/status/302' do
       redirect '/redirected', 302
     end
+    
+    get '/status/404' do
+      not_found
+    end
 
     get formatted_path[%r{/status/(?<code>\d+)}] do |*matches|
       code = params[:code]
