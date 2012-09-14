@@ -5,6 +5,7 @@ set :application, "Necrohost"
 set :repository,  "git://github.com/vajrapani666/necrohost.git"
 set :scm, :git
 
+ssh_options[:port] = 443
 
 set :default_environment, {
   'PRODUCTION' => 1
