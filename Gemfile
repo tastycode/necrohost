@@ -9,7 +9,7 @@ gem 'mustache'
 gem 'haml'
 gem 'hpricot'
 gem 'sinatra-contrib'
-gem 'dependence', :git => "git://github.com/vajrapani666/dependence.git"
+gem 'dependence', :git => "git://github.com/tastycode/dependence.git"
 
 group :development do
   gem 'pry'
