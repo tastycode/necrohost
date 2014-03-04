@@ -1,7 +1,7 @@
 source :rubygems
 
 gem 'sinatra'
-gem 'capistrano'
+gem 'capistrano', '~> 2.15.5'
 gem 'unicorn'
 gem 'capistrano-unicorn'
 gem 'rvm-capistrano'
